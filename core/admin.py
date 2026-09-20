@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import Profile, About, ExperienceCategory, Skill
+from core.models import Profile, About, ExperienceCategory, Skill, Project
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
@@ -16,3 +16,7 @@ class ExperienceCategoryAdmin(admin.ModelAdmin):
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):
     list_display = [ "name","category", "description"]
+    
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ["image", "name","description", "github", "pdf"]

@@ -28,3 +28,13 @@ class Skill(models.Model):
     
     def __str__(self):
         return self.name
+    
+class Project(models.Model):
+    image = models.ImageField(upload_to="profile/")
+    name = models.CharField(max_length=20)
+    description = models.TextField(default="No description provided yet.")
+    github = models.URLField()
+    pdf = models.FileField(upload_to='pdfs/')
+    
+    def __str__(self):
+        return self.name
